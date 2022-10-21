@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>jpa con string y jee</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+</head>
+<body>
+<h1 th:text="${title}"> </h1>
+<br>
+
+<form th:object="${client}" th:action="@{/createClient}" method="post">
+    <div class="form-group">
+
+        <label for="nameclient">Name</label>
+        <input id="nameclient" type="text" class="form-control" field="*{nameclient}" name="nameclient" placeholder="">
+        <small id="namehelp" class="form-text text-muted"></small>
+
+        <br>
+
+        <label for="passwordclient">Password</label>
+        <input id="passwordclient" type="password" class="form-control" field="*{passwordclient}" name="passwordclient"  placeholder="">
+        <small id="passwordhelp" class="form-text text-muted"></small>
+
+        <br>
+
+        <label for="birth">Birth date</label>
+        <input id="birth" type="date" class="form-control" field="*{birth}" name="birth" placeholder="">
+        <small id="birthhelp" class="form-text text-muted"></small>
+
+        <br>
+
+        <label for="gender">Gender</label>
+        <input id="gender" type="text" class="form-control" field="*{gender}" name="gender"  placeholder="">
+        <small id="genderhelp" class="form-text text-muted"></small>
+
+        <br>
+
+
+        <div class="form-label">
+            <input type="submit" value="Save" class="btn btn-success">
+        </div>
+    </div>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta charset="UTF-8">
+    <title>Primer crud con jpa, spring</title>
+    <meta charset="UTF-8">
+    <meta name="Author" content="JGSS">
+    <meta name="keywords" content="Egg">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}"/>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous"/>
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+          crossorigin="anonymous"/>
+
+</head> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+<body>
+<h1 th:text="${name}"> </h1>
+<br/>
+
+<div>
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th>Id</th>
+            <th>Product name</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product: ${product}">
+
+    <td th:text="${product.product_id}"></td>
+    <td th:text="${product.product_name}"></td>
+    <td th:text="${product.description}"></td>
+    <td th:text="${product.price}"></td>
+    </tr>
+    </tbody>
+    </table>
+    <a th:href="@{/createProduct}" class="btn btn-primary" style="margin-top: 10px ;margin-left: 25px;">
+        Create product </a>
+    </div>
+
+</body>
+</html>

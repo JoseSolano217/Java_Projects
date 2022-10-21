@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>jpa con string y jee</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+</head>
+<body>
+<h1 th:text="${title}"> </h1>
+<br>
+
+<form th:object="${bill}" th:action="@{/createBill}" method="post">
+<div class="form-group">
+
+    <label for="product_type">Product type</label>
+    <input id="product_type" type="text" class="form-control" field="*{product_type}" name="product_type" placeholder="Input product type">
+    <small id="typehelp" class="form-text text-muted"></small>
+
+    <br>
+
+    <label for="taxes">Product taxes</label>
+    <input id="taxes" type="number" class="form-control" field="*{taxes}" name="taxes"  placeholder="Input taxes in percentage">
+    <small id="taxhelp" class="form-text text-muted"></small>
+
+    <br>
+
+    <label for="enterprise_enterprise_id">Product taxes</label>
+    <input id="enterprise_enterprise_id" type="number" class="form-control" field="*{enterprise_enterprise_id}" name="enterprise_enterprise_id"  placeholder="Input an existing enterprise id">
+    <small id="enterprisehelp" class="form-text text-muted"></small>
+
+    <br>
+
+    <label for="client_client_id">Product taxes</label>
+    <input id="client_client_id" type="number" class="form-control" field="*{client_client_id}" name="client_client_id"  placeholder="Input an existing client id">
+    <small id="clienthelp" class="form-text text-muted"></small>
+
+    <br>
+
+    <label for="product_product_id">Product taxes</label>
+    <input id="product_product_id" type="number" class="form-control" field="*{product_product_id}" name="product_product_id"  placeholder="Input an existing product id">
+    <small id="producthelp" class="form-text text-muted"></small>
+
+    <br>
+
+    <div class="form-label">
+        <input type="submit" value="Save" class="btn btn-success">
+    </div>
+</div>
+
+</form>
+</body>
+</html>

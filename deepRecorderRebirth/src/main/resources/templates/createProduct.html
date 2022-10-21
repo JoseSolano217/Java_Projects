@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>jpa con string y jee</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+</head>
+<body>
+<h1 th:text="${title}"> </h1>
+<br>
+
+<form th:object="${product}" th:action="@{/createProduct}" method="post">
+<div class="form-group">
+
+    <label for="product_name">Product name</label>
+    <input id="product_name" type="text" class="form-control" field="*{product_name}" name="product_name+||                                                     |" placeholder="Input product name">
+    <small id="namehelp" class="form-text text-muted"></small>
+
+    <br>
+
+    <label for="description">Product description</label>
+    <input id="description" type="text" class="form-control" field="*{description}" name="description"  placeholder="Input product description">
+    <small id="descriptionhelp" class="form-text text-muted"></small>
+
+    <br>
+    <label for="price">Product price</label>
+    <input id="price" type="number" class="form-control" field="*{price}" name="price" placeholder="Input product price">
+    <small id="pricehelp" class="form-text text-muted"></small>
+
+    <br>
+
+    <div class="form-label">
+        <input type="submit" value="Save" class="btn btn-success">
+    </div>
+</div>
+
+</form>
+</body>
+</html>
